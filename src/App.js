@@ -3,25 +3,25 @@ import './App.css';
 import Navbar from './components/Navbar';
 import AppRouter from './components/AppRouter';
 import { createContext, useState } from 'react';
+import { FavoriteCatsContext } from './components/context/Context';
 
-export const LikeCatsContext = createContext()
 
 function App() {
 
-  const initialState = !!localStorage.loveCats ? JSON.parse( localStorage.loveCats) : []
-  const [likeCats, setLikeCats] = useState(initialState)
+  const initialState = !!localStorage.likeCats ? JSON.parse( localStorage.likeCats) : [];
   
+  const [favoriteCats, setFavoriteCats] = useState(initialState)
+
   return (
-    <LikeCatsContext.Provider value={{
-      likeCats,
-      setLikeCats,
+    <FavoriteCatsContext.Provider value={{
+      favoriteCats,
+      setFavoriteCats,
   }}>
       <BrowserRouter>
-      <button onClick={() => console.log(initialState)}>dvsvds</button>
         <Navbar/>
         <AppRouter/>
       </BrowserRouter> 
-    </LikeCatsContext.Provider>
+    </FavoriteCatsContext.Provider>
 
   );
 }

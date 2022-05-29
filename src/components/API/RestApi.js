@@ -1,14 +1,6 @@
-import { axios } from 'axios';
-
-export default class PostService{
+export default class RestApi{
 
     static async getCats() {
-
-            // fetch('https://api.nomoreparties.co/todays-tips-rus').then((res) => {
-            //   return res.json();
-            // }).then((res) => {
-            //   console.log(Object.values(res));  
-            // })
 
         return fetch("https://api.thecatapi.com/v1/images/search?mime_types=jpg,png&limit=15&order=Rand&size=med", {
             headers: {

@@ -1,22 +1,23 @@
 import React from 'react'
 import { useLocation, useNavigate} from 'react-router-dom'
+import './style/Navbar.css'
 
 function Navbar() {
 
   const router = useNavigate()
   let location = useLocation();
 
-  let loveCats = ['love-cats']
-  let allCats = ['all-cats']
+  let loveCats = ['love-cats__btn']
+  let allCats = ['all-cats__btn']
 
   switch (location.pathname) {
-    case '/all':
-      allCats = ['all-cats', 'active']
-      loveCats = ['love-cats'];
+    case '/':
+      allCats = ['all-cats__btn', 'active__btn']
+      loveCats = ['love-cats__btn'];
       break;
-    case '/like':
-      allCats = ['all-cats']
-      loveCats = ['love-cats', 'active'];
+    case '/favorite':
+      allCats = ['all-cats__btn']
+      loveCats = ['love-cats__btn', 'active__btn'];
       break;
   
     default:
@@ -28,47 +29,11 @@ function Navbar() {
   return (
     <div className='navbar__container'>
       <div className='navbar__wrapper'>
-        <button onClick={() => router('/all')} className={allCats.join(' ')}>Все котики</button>
-        <button onClick={() => router('/like')} className={loveCats.join(' ')}>Любимые котики</button>
+        <button onClick={() => router('/')} className={allCats.join(' ')}>Все котики</button>
+        <button onClick={() => router('/favorite')} className={loveCats.join(' ')}>Любимые котики</button>
       </div>
     </div>
   )
 }
 
 export default Navbar
-
-
-
-// function Navbar() {
-
-//   const router = useNavigate()
-//   let location = useLocation();
-
-//   let loveCats = ['love-cats']
-//   let allCats = ['all-cats']
-
-//   switch (location.pathname) {
-//     case '/all':
-//       allCats = ['all-cats', 'active']
-//       loveCats = ['love-cats'];
-//       break;
-//     case '/like':
-//       allCats = ['all-cats']
-//       loveCats = ['love-cats', 'active'];
-//       break;
-  
-//     default:
-//       break;
-//   }
-
-
-
-//   return (
-//     <div className='navbar__container'>
-//       <div className='navbar__wrapper'>
-//         <button onClick={() => router('/all')} className={allCats.join(' ')}>Все котики</button>
-//         <button onClick={() => router('/like')} className={loveCats.join(' ')}>Любимые котики</button>
-//       </div>
-//     </div>
-//   )
-// }
