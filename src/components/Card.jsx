@@ -15,15 +15,15 @@ const Card = ({ cat }) => {
         const check = [...favoriteCats].lastIndexOf(cat)
 
         if (check == -1) {
+            cat.like = true
             const likeCats = [...favoriteCats, cat]
             setFavoriteCats(likeCats)
             localStorage.likeCats = JSON.stringify(likeCats);
-            cat.like = true
         } else {
+            cat.like = false
             const likeCats = [...favoriteCats].filter((item, index) => index !== check)
             setFavoriteCats(likeCats)
             localStorage.likeCats = JSON.stringify(likeCats);
-            delete cat.like
         }
         
     }

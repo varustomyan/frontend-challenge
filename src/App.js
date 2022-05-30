@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import AppRouter from './components/AppRouter';
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import { FavoriteCatsContext } from './components/context/Context';
 
 

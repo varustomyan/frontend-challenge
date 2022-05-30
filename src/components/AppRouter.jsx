@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes} from "react-router-dom";
 import AllCats from './AllCats';
 import Favorite from './Favorite';
+import Error from './Error';
 
 const AppRouter = () => {
 
@@ -17,7 +18,7 @@ const AppRouter = () => {
                 element={<Favorite />}
                 key={2}
             />
-            {/* <Route path="*"   key='2'    element={<Error />} /> */}
+            <Route path="*"   key='3'    element={<Error />} />
         </Routes>
     );
 };
