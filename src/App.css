@@ -3,15 +3,11 @@
   max-width: 1317px;
   padding-top: 48px;
   margin: auto;
-  
+
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(225px, 1fr)) ;
+  grid-template-rows: repeat(auto-fill, minmax(225px, 1fr));
   gap: 48px 48px;
   justify-items: center;
-
-
-
-
 }
 
 .card-list h2 {
